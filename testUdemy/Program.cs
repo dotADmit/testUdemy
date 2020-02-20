@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace testUdemy
 {
@@ -15,11 +16,49 @@ namespace testUdemy
 
 
 
+
+
+
+
+
             Console.ReadLine();
 
 
 
 
+        }
+        static void Task7()
+        {
+            string userLogin = "johnsilver";
+            string userPassword = "qwerty";
+
+            string result = "";
+            int counter = 0;
+
+            while (true)
+            {
+                Console.Clear();
+                Console.Write("Enter login: ");
+                string login = Console.ReadLine();
+                Console.Write("Enter password: ");
+                string password = Console.ReadLine();
+
+                if (userLogin == login && userPassword == password)
+                {
+                    result = "Enter the System";
+                    break;
+                }
+
+                counter++;
+
+                if (counter == 3)
+                {
+                    result = "The number of available tries have been exceeded.";
+                    break;
+                }
+            }
+
+            Console.WriteLine(result);
         }
         static void Task6()
         {
@@ -30,7 +69,7 @@ namespace testUdemy
         }
         static int Factorial(int number)
         {
-            if (number == 0)
+            if (number == 1)
                 return 1;
 
             return number * Factorial(number - 1);
